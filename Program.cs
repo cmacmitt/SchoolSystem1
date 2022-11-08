@@ -13,15 +13,28 @@ ictDepartment.AddDiploma(nsaDiploma);
 
 // add 2 courses to each diploma
 Course introToOOP = new Course("Introdcution to OOP");
-Course introToSQL = new Course("Introcution to Databases");
+Course introToSQL = new Course("Introdution to Databases");
+Course entityFramework = new Course("Introdution to Entity Framework");
+Course paperHatMaking = new Course("Paper Hat Making");
 sdDiploma.AddCourse(introToOOP, true);
 sdDiploma.AddCourse(introToSQL, true);
+sdDiploma.AddCourse(entityFramework, true);
+sdDiploma.AddCourse(paperHatMaking, false);
 
 // add 2 students to each diploma
 Student paul = new Student("Paul");
 Student susie = new Student("Susie");
 
-sdDiploma.AddStudent(paul);
-sdDiploma.AddStudent(susie);
+//sdDiploma.AddStudent(paul);
+//sdDiploma.AddStudent(susie);
 
 // enroll students in their mandatory courses
+
+mitt.EnrollStudentInMandetoryCourses(paul, sdDiploma);
+mitt.EnrollStudentInMandetoryCourses(susie, sdDiploma);
+
+foreach (var enrollment in paul.Enrollments)
+{
+    Console.WriteLine(enrollment.Course.Name);
+}
+

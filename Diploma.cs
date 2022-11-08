@@ -27,5 +27,20 @@ namespace SchoolSystem1
         {
             Students.Add(student);
         }
+
+        public List<Course> GetMandatoryCourseList()
+        {
+            List<Course> manditoryCourses = new List<Course>();
+
+            foreach (var course in Courses)
+            {
+                if (course.Value)
+                {
+                    manditoryCourses.Add(course.Key);
+                }
+            }
+
+            return manditoryCourses;
+        }
     }
 }

@@ -33,9 +33,14 @@ namespace SchoolSystem1
 
         public void EnrollStudentInMandetoryCourses(Student student, Diploma diploma)
         {
-            // get all the mandatory course from the dictionary in Diploma
+            // get all the mandatory courses from the dictionary in Diploma
             // iterate over the course list
             // call the enrollment method for each course
+
+            foreach (var course in diploma.GetMandatoryCourseList())
+            {
+                EnrollStudent(student, course);
+            }
         }
     }
 }
