@@ -16,5 +16,13 @@ namespace SchoolSystem1
             Name = name;
             Enrollments = new HashSet<Enrollment>();
         }
+
+        public void PrintEnrolledCourses()
+        {
+            foreach (var enrollment in Enrollments)
+            {
+                Console.WriteLine(enrollment.Course.Name);
+            }
+        }
     }
 }

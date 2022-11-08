@@ -25,16 +25,13 @@ sdDiploma.AddCourse(paperHatMaking, false);
 Student paul = new Student("Paul");
 Student susie = new Student("Susie");
 
-//sdDiploma.AddStudent(paul);
-//sdDiploma.AddStudent(susie);
-
 // enroll students in their mandatory courses
-
 mitt.EnrollStudentInMandetoryCourses(paul, sdDiploma);
 mitt.EnrollStudentInMandetoryCourses(susie, sdDiploma);
 
-foreach (var enrollment in paul.Enrollments)
-{
-    Console.WriteLine(enrollment.Course.Name);
-}
+Console.WriteLine("Paul's Enrollments");
+paul.PrintEnrolledCourses();
 
+Console.WriteLine("------------------------------");
+Console.WriteLine("Susie's Enrollments");
+susie.PrintEnrolledCourses();
